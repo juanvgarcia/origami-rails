@@ -12,6 +12,7 @@ puts 5.class
 puts 5.is_a?(Fixnum)
 
 #even nil is an object too!
+#Double quotes allow embedding ruby expressions.
 puts "Is nil nil?: #{nil.nil?}"
 
 #objects and hashes can be instantiated literally.  More on these objects later.
@@ -29,11 +30,11 @@ end
 puts something
 
 #You can return two or more values.
-def two_somethings
-  return "foo", "bar"
+def repeat(foo, bar)
+  return foo, bar
 end
 
-one, two = two_somethings
+one, two = repeat("one", "two")
 
 puts "#{one}#{two}"
 
@@ -49,6 +50,8 @@ hello = 'hello'
 puts hello.upcase
 
 puts hello[1,3]
+
+puts hello.reverse
 
 #If/else.  Ruby also supports an elsif construct
 
@@ -81,6 +84,13 @@ else
   puts "Everything else!"
 end
 
+#While
+i = 0
+while i < 10
+  puts i
+  i+=1
+end
+
 #Some operators.  "and" and "or" can be used, but have lower precedence than && and ||
 #If and unless statements can be used after a statement like this
 puts "Never!" if true && false
@@ -89,4 +99,6 @@ puts "Always!" unless false || false
 #The ||= operator basically initializes to the argument if the variable is nil
 test ||= "test"
 puts test
+
+
 
