@@ -69,7 +69,6 @@ else
 end
 
 #Ruby also has the unless keyword, which works as a negated if.  It's a bit weird initially, but once you get used to it, it's quite readable.
-
 unless something.nil?
   puts "Something is not nil, then print this!"
 end
@@ -84,11 +83,32 @@ else
   puts "Everything else!"
 end
 
-#While
+#While.  #Similar to unless, Ruby supports until, which is a negated while.
 i = 0
 while i < 10
-  puts i
+  puts "While: #{i}"
   i+=1
+end
+
+i = 0
+until i ==5
+  puts "Until: #{i}"
+  i+=1
+end
+
+#For.  This uses a Range, more on Ranges later.
+for i in (1..5)
+  puts "For: #{i}"
+end
+
+#Probably the most Rubyish way to iterate is with blocks, though.  More on blocks later, but here are some examples.
+[1,2,3,4,5].each do |i|
+  puts "This is a block, and this time I got #{i}"
+end
+
+#Hashes get key/value iterations.
+{a:1, b:2, c:3}.each do |key, value|
+  puts "This is a hash, and for key #{key}, I got value #{value}."
 end
 
 #Some operators.  "and" and "or" can be used, but have lower precedence than && and ||
@@ -99,6 +119,8 @@ puts "Always!" unless false || false
 #The ||= operator basically initializes to the argument if the variable is nil
 test ||= "test"
 puts test
+
+
 
 
 
