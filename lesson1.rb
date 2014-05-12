@@ -73,6 +73,9 @@ unless something.nil?
   puts "Something is not nil, then print this!"
 end
 
+#Unless and if can also be appended to lines, which is, allegedly, more readable.  The ruby style guide recommends it.
+puts "This will always be printed!" unless something.nil?
+
 #Ruby's switch
 case Random.new.rand(0..9)
 when 1
@@ -106,6 +109,8 @@ end
   puts "This is a block, and this time I got #{i}"
 end
 
+3.times {|i| puts "This is hello number #{i+1}"}
+
 #Hashes get key/value iterations.
 {a:1, b:2, c:3}.each do |key, value|
   puts "This is a hash, and for key #{key}, I got value #{value}."
@@ -120,7 +125,14 @@ puts "Always!" unless false || false
 test ||= "test"
 puts test
 
+#<=> is another interesting operator, which is frequently used by sort operations.
+puts "abc".upcase <=> "cba".upcase
 
+#Constants are written in uppercase.
+CONST = 1
+
+#But take care, they can be modified!
+CONST1 = 2
 
 
 
