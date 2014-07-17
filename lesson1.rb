@@ -54,7 +54,6 @@ puts hello[1,3]
 puts hello.reverse
 
 #If/else.  Ruby also supports an elsif construct
-
 if something
   puts "Something is true!"
 else
@@ -133,6 +132,3 @@ CONST = 1
 
 #But take care, they can be modified!
 CONST1 = 2
-
-
-

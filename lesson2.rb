@@ -88,6 +88,7 @@ ingredients_list.each { |ingredient, quantity| puts "#{quantity} of #{ingredient
 #Ruby also has functional features.  Blocks are pretty much anonymous functions, but we can also use Procs like this:
 hello_world = Proc.new { puts "Hello World" }
 
+#Since we can "store" functions as variables, we can reuse then if needed.
 #The ampersand operator turns Procs into blocks, which are expected by some Ruby methods.
 5.times &hello_world
 
@@ -100,7 +101,13 @@ square = Proc.new {|n| n**2}
 
 print_after_f(square, [1,2,3])
 
+#We can also define methods that use blocks.
+def iterate!(array)
+  array.each_with_index {|n,i| array[i] = yield(n)}
+end
 
+puts iterate!([1,2,3]){ |x| x**2 }
 
-
-
+#Print the English letters using a Range.
+('a'..'z').each {|letter| print "#{letter} "}
+puts
