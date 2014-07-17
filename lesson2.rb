@@ -74,12 +74,33 @@ end
 
 #We can also use blocks with hashes.
 ingredients_list = {
-  cheese: '1kg'
+  cheese: '1kg',
   sauce: '1lt',
-  mushrooms: '0.5kg'
-  peppers: '0.25kg'
+  mushrooms: '0.5kg',
+  peppers: '0.25kg',
   garlic: '0.05kg'
 }
+
+puts "To make a great pizza we need:"
+
+ingredients_list.each { |ingredient, quantity| puts "#{quantity} of #{ingredient}" }
+
+#Ruby also has functional features.  Blocks are pretty much anonymous functions, but we can also use Procs like this:
+hello_world = Proc.new { puts "Hello World" }
+
+#The ampersand operator turns Procs into blocks, which are expected by some Ruby methods.
+5.times &hello_world
+
+#We can also have functions that expect functions as parameters.
+def print_after_f(f, arr)
+  arr.each{|i| puts f.call(i)}
+end
+
+square = Proc.new {|n| n**2}
+
+print_after_f(square, [1,2,3])
+
+
 
 
 
