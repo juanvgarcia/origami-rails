@@ -39,9 +39,9 @@ first = Product.new({
 	quantity: 5
 })
 
-puts first.to_s
-puts first.is_available?
-puts first.is_out_of_stock?
-puts first.has_at_least_3?
-puts first.has_at_least_5?
-puts first.has_at_least_14?
+puts "This is a product #{first.to_s}"
+puts "Is that product available? #{first.is_available?}"
+puts "Is that product out of stock? #{first.is_out_of_stock?}"
+puts "Do we have at least three units of this product #{first.has_at_least_3?}"
+puts "Do we have at least 5 units of this product #{first.has_at_least_5?}"
+puts "Do we have at least 14 units of this product #{first.has_at_least_14?}"
